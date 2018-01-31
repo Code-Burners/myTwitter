@@ -41,14 +41,14 @@
                 success: function (data) {
                     
                     sessionStorage.setItem("username", ko.utils.unwrapObservable(name));
-                    sessionStorage.setItem("token", data.access_token);
+                    sessionStorage.setItem('token', data.access_token);
                     location.reload();
                     router.navigate('#welcome');
 
                 },
                 error: function (data) {
                     $("#error").show();
-                    $("#error").text(data.responseJSON["error_description"]);
+                    $("#error").text('The user name or password is incorrect.');
                     $("#error").fadeOut(6000);
                 }
             });
