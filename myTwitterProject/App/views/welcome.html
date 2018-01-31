@@ -1,0 +1,152 @@
+﻿<body>
+
+    <div class="container-fluid">
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog" style="width: 400px; margin: 30px auto; position: static">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Liked By</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div data-bind="foreach:likedBy">
+                            <p data-bind="if: $parent.sName==name"><strong data-bind="text:'You'"></strong></p>
+                            <p data-bind="ifnot: $parent.sName==name"><strong data-bind="text:name"></strong></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="commentbx" class="modal fade" style="font-family: Verdana; font-size: 12px">
+            <div class="modal-dialog" style="width: 500px; margin: 30px auto; position: static">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title"><strong>Comments</strong></h2>
+                    </div>
+                    <div class="modal-body">
+                        <input placeholder="Enter your comment.." id="txtbox1" data-bind="value:comment ,valueUpdate:'afterkeydown'" maxlength="25">
+                        <button type="button" class="btn btn-primary" data-bind="click:function(){commentmsg()},enable: comment" style="display: inline">Comment</button>
+                        <div>
+                            <br />
+                            <h3> <strong>Other Comments</strong></h3>
+                            <br />
+                            <div data-bind="foreach:comments">
+                                <div class="outer">
+                                    <div class="inner">
+                                        <h4> <strong data-bind="text:name"></strong></h4>
+                                    </div> 
+                                    &nbsp;
+                                      <div class="inner">
+                                        <h4 data-bind="text:comment"></h4>
+                                    </div>
+                                </div>
+                                <div class="outer1">
+                                    <div class="inner"> <h6 data-bind="text:time"></h6></div>
+                                    <div class="inner"><h6 data-bind="text:date"></h6></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+            </div>
+        </div>
+        <div class="row content">
+            <div class="col-sm-3" id="sidenav">
+                <h2><strong data-bind="text:'Welcome '+sName"></strong></h2>
+                <ul class="nav nav-pills nav-stacked">
+
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#profile">Account Options</a></li>
+                    <li> <a data-bind="click:logout">Log out</a></li>
+
+                </ul><br>
+                <div class="input-group">
+                    <input type="text" id="searchbox" class="form-control" placeholder="Search Tweets.." data-bind="value:searchTerm">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" data-bind="click:search">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div>
+                <br>
+
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8" id="main">
+                <div id="search" style="display:none">
+                    <h2><strong>Search Results</strong></h2><button class="glyphicon glyphicon-remove pull-right" data-bind="click:refresh"></button>
+
+                </div>
+                <div style="font-family: Verdana; font-size: 12px" id="welcomeTop">
+                    Create a Post &nbsp; <label id="lblcount" style="background-color:cornflowerblue;color:White;font-weight:bold;">50</label><br />
+                </div>
+                <div class="input-group" id="statusShare">
+                    <div style="font-family: Verdana; font-size: 12px ">
+
+
+
+                        <input placeholder="Share Your Tweets.." id="txtbox" data-bind="value:status ,valueUpdate:'afterkeydown',event: { 'keyup': count }" maxlength="50">
+                        <button type="button" class="btn btn-primary" data-bind="click:share,enable: status" style="display: inline">Share</button>
+
+                    </div>
+
+
+                </div>
+
+                <br>
+                <div data-bind="foreach:statuses">
+                    <div data-bind="attr:{id:statusId+'main'}">
+                        <h4><strong data-bind="text:name"></strong> </h4>
+                        <input type="text" data-bind="attr:{id:statusId+'e'},  value:$parent.newVal" style="display:none" maxlength="50" />
+                        <button type="button" class="glyphicon glyphicon-ok" data-bind="attr:{id:statusId+'eb'}, click:function(){$parent.update(statusId,like,date,time);}" style="display:none"></button>
+
+
+                        <h3 data-bind="text:statuses, attr:{id:statusId}"></h3>
+
+
+
+                        <div class="outer">
+                            <div class="inner"> <a data-bind="attr:{id:statusId+'l'}, text:like , click:function(){$parent.displayLikes(statusId)}" data-toggle="modal" data-target="#myModal"></a></div>
+
+                            <div class="inner"> <button type="button" class="glyphicon glyphicon-thumbs-up" style="display: inline" data-bind="click: function () { $parent.updateLike(statusId); }"></button></div>
+
+                            <div class="inner" data-bind="if: $parent.sName == name "><button type="button" class="glyphicon glyphicon-pencil" data-bind="click: function () { $parent.edit(statusId); }" style="display: inline"></button></div>
+
+                            <div class="inner"><button type="button" class="glyphicon glyphicon-comment" data-bind="attr:{id:statusId+'eb'}, click:function(){$parent.commentbox(statusId)}" data-toggle=" modal" data-id="id" data-target="#comment" style="display: inline"></button></div>
+
+                            <div class="inner" data-bind="if: $parent.sName == name "><button type="button" class="glyphicon glyphicon-trash" style="display: inline" data-bind="click: function () { $parent.deleteStatus(statusId); }"></button></div>
+
+                        </div>
+                        <div class="outer1">
+                            <div class="inner"> <h6 data-bind="text:time"></h6></div>
+
+                            <div class="inner"><h6 data-bind="text:date"></h6></div>
+
+
+                        </div>
+                        <br />
+                    </div>
+
+                </div>
+                <button class="btn btn-primary pull-right" id="showMore" style="display:inline" data-bind="click:showMore">Show more tweets</button>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>

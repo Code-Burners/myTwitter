@@ -1,0 +1,50 @@
+﻿
+
+    #btn     {
+        margin-left: 5px;
+        min-width: 4px;
+        font-size: 10px;
+        color: #ffffff;
+        margin-right: 5px;
+    }
+
+     #txtbox {
+        height: 46px;
+        width: 550px;
+    }
+     #txtbox1 {
+        height: 46px;
+        width: 550px;
+    }
+ 
+   
+    .row.content {
+        height: 1500px;
+    }
+
+    
+    #sidenav {
+        position: fixed;
+        top: 50px;
+        background-color: #f1f1f1;
+        height: 100%;
+        padding-bottom:20px;
+    }
+
+   
+
+    #outer {
+        width: 100%;
+        text-align: center;
+    }
+
+    #outer1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .inner {
+        display: inline-block;
+    }
+
+

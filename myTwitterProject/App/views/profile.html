@@ -1,0 +1,135 @@
+﻿<style>
+    #btn1 {
+        margin-left: 5px;
+        min-width: 4px;
+        font-size: 10px;
+        color: #ffffff;
+        margin-right: 5px;
+    }
+
+    #txtbox {
+        height: 46px;
+        width: 550px;
+    }
+
+
+
+    .row.content {
+        height: 1500px;
+    }
+
+
+    #sidenav {
+        position: fixed;
+        top: 50px;
+        background-color: #f1f1f1;
+        height: 100%;
+        padding-bottom: 20px;
+    }
+
+
+
+    #outer {
+        width: 100%;
+        text-align: center;
+    }
+
+    #outer1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .inner {
+        display: inline-block;
+    }
+</style>
+
+
+<div class="col-sm-3" id="sidenav">
+    <h2><strong data-bind="text:'Welcome '+sName"></strong></h2>
+    <ul class="nav nav-pills nav-stacked">
+
+        
+        <li><a data-bind="click:change">Change Password</a></li>
+        <li> <a data-bind="click:deleteView">Delete Account</a></li>
+
+    </ul><br>
+   
+</div>
+
+
+   
+        
+
+<div class="col-sm-4"></div>
+<div class="col-sm-8" id="main">
+    <div id="text" align="center">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h2>
+            Your profile,
+            <br />
+            Your Identity!
+        </h2>
+        <br />
+        Manage your account
+
+
+    </div>
+       
+        <div id="changePassword" style="display:none" align="center">
+            <form class="form-inline">
+                <h2>Change Password</h2>
+                <label>Current Password</label>
+                <br />
+                <input type="password" id="oldPassword" data-bind="value: oldPass, valueUpdate: 'afterkeydown'" required />
+                <br />
+                <br />
+
+                <label>New Password</label>
+                <br />
+                <input type="password" class="pass" data-bind="value: newPass, valueUpdate: 'afterkeydown'" required />
+                <br />
+                <br />
+                <label>Confirm New Password</label>
+                <br />
+                <input type="password" class="pass" data-bind="value: cNewPass, valueUpdate: 'afterkeydown'" required />
+
+                <br />
+
+                <br />
+                <button type="submit" class="btn" data-bind="click: changePass ">Change</button>
+
+            </form>
+           
+
+
+        </div>
+
+        <div id="delete" style="display:none" align="center">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p style="align-content:center">Deleting your account will destroy your credentials and your data, you might not be able to login to myTwitter and use its services.</p>
+            <br />
+            <br />
+            <center>Are you sure you want to proceed?</center>
+            <br />
+            <form>
+                <button type="submit" class="btn" data-bind="click: deleteAccount ">Delete Account</button>
+            </form>
+
+        </div>
+    </div>
+
+
+

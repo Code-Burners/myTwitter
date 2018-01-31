@@ -1,0 +1,34 @@
+﻿<section>
+    
+    <center>
+    <form class="form-inline">
+        <h2>Hello! Enter the club</h2>
+            <label>User name</label>
+        <br />
+            <input type="text" data-bind="value: name, valueUpdate: 'afterkeydown'" />
+            <br />
+        <br />
+            <label>Password</label>
+        <br />
+            <input type="password" data-bind="value: password, valueUpdate: 'afterkeydown'" />
+        <br />
+        <br />
+            <button type="submit" class="btn" data-bind="click: login, enable: password">Log In</button>
+        <br />
+        <br />
+        <label id="error" style="color:indianred; display:none"></label>
+    </form>
+        </center>
+   
+    <br />
+    <br />
+    <div style=" width:800px; margin:0 auto">
+    <p data-bind="text:desString"></p>
+        <br />
+       
+        <center>
+        <h2>Not a member?</h2>
+        <a data-bind="attr: { href: '#signup' }, html: 'Signup'"></a>
+            </center>
+        </div>
+</section>
