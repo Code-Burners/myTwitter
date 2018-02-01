@@ -83,52 +83,39 @@
             </div>
             <div>
                 <br>
-
             </div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-3"></div>
             <div class="col-sm-8" id="main">
                 <div id="search" style="display:none">
                     <h2><strong>Search Results</strong></h2><button class="glyphicon glyphicon-remove pull-right" data-bind="click:refresh"></button>
 
                 </div>
-                <div style="font-family: Verdana; font-size: 12px" id="welcomeTop">
+                <div style="font-weight: bold; font-size: 20px" id="welcomeTop">
                     Create a Post &nbsp; <label id="lblcount" style="background-color:cornflowerblue;color:White;font-weight:bold;">50</label><br />
                 </div>
                 <div class="input-group" id="statusShare">
                     <div style="font-family: Verdana; font-size: 12px ">
-
-
-
                         <input placeholder="Share Your Tweets.." id="txtbox" data-bind="value:status ,valueUpdate:'afterkeydown',event: { 'keyup': count }" maxlength="50">
-                        <button type="button" class="btn btn-primary" data-bind="click:share,enable: status" style="display: inline">Share</button>
-
+                        <div class="smallerGap"></div>
+                        <button type="button" class="btn btn-primary pull-right" data-bind="click:share,enable: status" style="display: inline">Share</button>
                     </div>
-
-
                 </div>
-
-                <br>
                 <div data-bind="foreach:statuses">
                     <div data-bind="attr:{id:statusId+'main'}">
                         <h4><strong data-bind="text:name"></strong> </h4>
                         <input type="text" data-bind="attr:{id:statusId+'e'},  value:$parent.newVal" style="display:none" maxlength="50" />
-                        <button type="button" class="glyphicon glyphicon-ok" data-bind="attr:{id:statusId+'eb'}, click:function(){$parent.update(statusId,like,date,time);}" style="display:none"></button>
-
-
+                        <button type="button" class="btn  glyphicon glyphicon-ok" data-bind="attr:{id:statusId+'eb'}, click:function(){$parent.update(statusId,like,date,time);}" style="display:none"></button>
                         <h3 data-bind="text:statuses, attr:{id:statusId}"></h3>
-
-
-
                         <div class="outer">
                             <div class="inner"> <a data-bind="attr:{id:statusId+'l'}, text:like , click:function(){$parent.displayLikes(statusId)}" data-toggle="modal" data-target="#myModal"></a></div>
 
-                            <div class="inner"> <button type="button" class="glyphicon glyphicon-thumbs-up" style="display: inline" data-bind="click: function () { $parent.updateLike(statusId); }"></button></div>
+                            <div class="inner"> <button type="button" class="btn glyphicon glyphicon-thumbs-up" style="display: inline" data-bind="click: function () { $parent.updateLike(statusId); }"></button></div>
 
-                            <div class="inner" data-bind="if: $parent.sName == name "><button type="button" class="glyphicon glyphicon-pencil" data-bind="click: function () { $parent.edit(statusId); }" style="display: inline"></button></div>
+                            <div class="inner" data-bind="if: $parent.sName == name "><button type="button" class="btn glyphicon glyphicon-pencil" data-bind="click: function () { $parent.edit(statusId); }" style="display: inline"></button></div>
 
-                            <div class="inner"><button type="button" class="glyphicon glyphicon-comment" data-bind="attr:{id:statusId+'eb'}, click:function(){$parent.commentbox(statusId)}" data-toggle=" modal" data-id="id" data-target="#comment" style="display: inline"></button></div>
+                            <div class="inner"><button type="button" class="btn glyphicon glyphicon-comment" data-bind="attr:{id:statusId+'eb'}, click:function(){$parent.commentbox(statusId)}" data-toggle=" modal" data-id="id" data-target="#comment" style="display: inline"></button></div>
 
-                            <div class="inner" data-bind="if: $parent.sName == name "><button type="button" class="glyphicon glyphicon-trash" style="display: inline" data-bind="click: function () { $parent.deleteStatus(statusId); }"></button></div>
+                            <div class="inner" data-bind="if: $parent.sName == name "><button type="button" class="btn glyphicon glyphicon-trash" style="display: inline" data-bind="click: function () { $parent.deleteStatus(statusId); }"></button></div>
 
                         </div>
                         <div class="outer1">
@@ -140,10 +127,11 @@
                         </div>
                         <br />
                     </div>
-
                 </div>
-                <button class="btn btn-primary pull-right" id="showMore" style="display:inline" data-bind="click:showMore">Show more tweets</button>
-
+                <div>
+                    <button class="btn btn-primary pull-right" id="showMore" style="display:inline" data-bind="click:showMore">Show more tweets</button>
+                   
+                </div>
             </div>
         </div>
     </div>

@@ -17,16 +17,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("myTwitter", "Index", "Home", null, new { @class = "navbar-brand" })
+                <h3 id="logo-title" ><strong>myTwitter</strong></h3>
             </div>
             
         </div>
     </div>
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - myTwitter</p>
+            <p style="font-weight:normal; font-size: 15px;text-align: center;" class="pull-right">Copyright &copy; @DateTime.Now.Year - myTwitter  </p>
         </footer>
     </div>
 

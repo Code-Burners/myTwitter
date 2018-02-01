@@ -4,8 +4,6 @@
     return {
         router: router,
         activate: function () {
-            system.log('shell has fired');
-
             router.guardRoute = function (instance, instruction) {
                 if ((sessionStorage.getItem("username") == null) && instruction.config.route !== "" && instruction.config.route !== "signup" && instruction.config.route !== "usageStats") {
 

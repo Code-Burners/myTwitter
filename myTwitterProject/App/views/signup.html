@@ -2,33 +2,38 @@
     <div class="modal-body row">
         <div class="col-md-6 text-center">
             <!-- Your first column here -->
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <p data-bind="text:desString" ></p>
-        </div>
+            <div class="smallerGap"></div>
+            <div>
+                <button class="btn glyphicon glyphicon-arrow-left pull-left" style="text-align: center; display: inline;" onclick="window.history.go(-1)"> Back</button>
+            </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <p data-bind="text:desString"></p>
+            </div>
         <div align ="center" class="col-md-6" >
             <!-- Your second column here -->
             <form class="form-inline">
                 <h2>Hello! Join the club</h2>
-                <label>Your name</label>
+                
                 <br />
-                <input type="text" id="name" data-bind="value: name, valueUpdate: 'afterkeydown'" required />
+                <input placeholder="User Name" type="text" id="name" data-bind="value: name, valueUpdate: 'afterkeydown'" required />
                 <br />
                 <br />
                 
-                <label>Password</label>
+               
                 <br />
-                <input type="password" class="pass" data-bind="value: password, valueUpdate: 'afterkeydown'" required />
+                <input placeholder="Password" type="password" class="pass" data-bind="value: password, valueUpdate: 'afterkeydown'" required />
                 <br />
                 <br />
-                <label>Confirm Password</label>
+               
                 <br />
-                <input type="password" class="pass" data-bind="value: cPassword, valueUpdate: 'afterkeydown'" required />
+                <input placeholder="Confirm Password" type="password" class="pass" data-bind="value: cPassword, valueUpdate: 'afterkeydown'" required />
                 
                 <br />
 

@@ -1,24 +1,27 @@
 ﻿<section>
     
     <center>
-    <form class="form-inline">
+        <form class="form-inline">
         <h2>Hello! Enter the club</h2>
-            <label>User name</label>
-        <br />
-            <input type="text" data-bind="value: name, valueUpdate: 'afterkeydown'" />
-            <br />
-        <br />
-            <label>Password</label>
-        <br />
-            <input type="password" data-bind="value: password, valueUpdate: 'afterkeydown'" />
-        <br />
-        <br />
+            <div class="group">
+                <input placeholder="User Name" type="text" required data-bind="value: name, valueUpdate: 'afterkeydown'">
+                <span class="highlight"></span>
+                <span class="bar"></span>           
+            </div>
+
+            <div class="group">
+                <input placeholder="Password" type="password" required data-bind="value: password, valueUpdate: 'afterkeydown'">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+            </div>
+            <center>
+                <label id="error" style="color:indianred; display:none"></label>
+            </center>
+            <div class="smallerGap"></div>
             <button type="submit" class="btn" data-bind="click: login, enable: password">Log In</button>
-        <br />
-        <br />
-        <label id="error" style="color:indianred; display:none"></label>
-    </form>
-        </center>
+       
+        </form>
+    </center>
    
     <br />
     <br />

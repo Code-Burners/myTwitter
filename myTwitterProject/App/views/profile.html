@@ -1,51 +1,11 @@
-﻿<style>
-    #btn1 {
-        margin-left: 5px;
-        min-width: 4px;
-        font-size: 10px;
-        color: #ffffff;
-        margin-right: 5px;
-    }
-
-    #txtbox {
-        height: 46px;
-        width: 550px;
-    }
-
-
-
-    .row.content {
-        height: 1500px;
-    }
-
-
-    #sidenav {
-        position: fixed;
-        top: 50px;
-        background-color: #f1f1f1;
-        height: 100%;
-        padding-bottom: 20px;
-    }
-
-
-
-    #outer {
-        width: 100%;
-        text-align: center;
-    }
-
-    #outer1 {
-        width: 100%;
-        text-align: center;
-    }
-
-    .inner {
-        display: inline-block;
-    }
-</style>
+﻿
 
 
 <div class="col-sm-3" id="sidenav">
+    <div class="smallerGap"></div>
+    <div>
+        <button class="btn glyphicon glyphicon-home" style="display:inline;text-align: center;" onclick="window.history.go(-1)"> Home</button>
+    </div>
     <h2><strong data-bind="text:'Welcome '+sName"></strong></h2>
     <ul class="nav nav-pills nav-stacked">
 
